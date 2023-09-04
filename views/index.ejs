@@ -3,17 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <title>Weather App</title>
     <link rel="stylesheet" type="text/css"  href="styles/main.css">
 </head>
 <body>
     <div class="container">
         <div class="intro">
-            <p>weather viewer</p>
-            <p>Coded with ❤ by Michael Okolo</p>
+            <h1>weather viewer</h1>
+            <p>Coded with <span>❤</span> by Michael Okolo</p>
         </div>
         <div class="weather-section">
-
+            <form action="/" method="POST">
+                <input type="text" id="city" name="city" placeholder="Enter any city..."/>
+                <input type="submit" class="btn" value="Submit">
+            </form>
+            <div class="weather-info">
+                <h1 class="city">City: England</h1>
+                <p>Conditions: broken clouds</p>
+                <p>Temperature: 33.60 C</p>
+                <p>Wind Speed: 2.16 km/h</p>
+            </div>
         </div>
     </div>
 </body>
