@@ -20,16 +20,21 @@
             <p>Coded with <span>❤</span> by Michael Okolo</p>
         </div>
         <div class="weather-section">
-            <form action="/" method="POST">
+            <form action="/submit" method="POST">
                 <input type="text" id="city" name="city" placeholder="Enter any city..."/>
                 <input type="submit" class="btn" value="Submit">
             </form>
+            <%if(!locals.name){%>
+                <p></p>
+            <%}else{%>
             <div class="weather-info">
-                <h1 class="city">City: England</h1>
-                <p>Conditions: broken clouds</p>
-                <p>Temperature: 33.60 C</p>
-                <p>Wind Speed: 2.16 km/h</p>
+                <h1 class="city">City: <%= locals.name %></h1>
+                <p>Conditions: <%= locals.description%></p>
+                <p>Temperature: <%=locals.temp%> C</p>
+                <p>Wind Speed: <%=locals.wind%> km/h</p>
             </div>
+            <%}%>
+            
         </div>
     </div>
 </body>
