@@ -17,8 +17,7 @@ app.get("/", (req,res)=>{
 })
 
 app.post("/submit", async (req,res)=>{
-console.log(req.body)
-// axios.get(url[, config])
+
 try {
     const geolocation_result = await axios.get(
         API_URL + "geo/1.0/direct",
@@ -42,7 +41,7 @@ try {
             }
         }
     )
-    console.log(result.data.name)
+    
     res.render("index.ejs", {
         name:result.data.name, 
         description:result.data.weather[0]['description'],
@@ -51,21 +50,10 @@ try {
     })
 
 } catch (error) {
-    
+    res.status(404).send(error.message)
 }
 })
 
 app.listen(port, ()=>{
     console.log(`Server is listening at port ${port}`)
 })
-
-// data: [
-//     {
-//       name: 'Lagos',
-//       local_names: [Object],
-//       lat: 6.4550575,
-//       lon: 3.3941795,
-//       country: 'NG',
-//       state: 'Lagos State'
-//     }
-//   ]
